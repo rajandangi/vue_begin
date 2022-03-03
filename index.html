@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue JS</title>
     <style>
-        .box{
+        .box {
             background-color: purple;
             height: 200px;
             width: 200px;
             box-shadow: 2rem;
         }
-        v-cloak{
+
+        v-cloak {
             display: none;
         }
-        input{
+
+        input {
             margin: 10px;
             display: block;
         }
     </style>
 </head>
+
 <body>
     <div id="app" v-cloak>
-       <login-form/>
-        <input @keyup.enter="greet(greeting+'!!!')" v-model="greeting"/>
+        <login-form />
+        <input @keyup.enter="greet(greeting+'!!!')" v-model="greeting" />
 
         <hr>
         <button @click="toggleBox">Toggle Box</button>
