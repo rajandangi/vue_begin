@@ -36,25 +36,25 @@
     </div>
     <script src="https://unpkg.com/vue@3"></script>
     <script>
-        let app=Vue.createApp({
-            data: function(){
-                return{
+        let app = Vue.createApp({
+            data: function () {
+                return {
                     greeting: 'Hello World from Nepal!',
                     isVisible: false
                 }
             },
-            methods:{
-                toggleBox(){
-                    this.isVisible=!this.isVisible
+            methods: {
+                toggleBox() {
+                    this.isVisible = !this.isVisible
                 },
-                greet(greeting){
+                greet(greeting) {
                     console.log(greeting)
                 }
             }
         })
-        app.component('login-form',{
-            template:`
-            <form @submit.prevent="handleSubmit">
+        app.component('login-form', {
+            template: `
+                <form @submit.prevent="handleSubmit">
             <h1>{{title}}</h1>
             <custom-input
             v-for="(input, i) in inputs"
@@ -65,44 +65,44 @@
             />
             <button>Login</button>
             </form>
-            `,
-            components:['custom-input'],
-            data(){
-                return{
-                    title:'Login Form',
-                    inputs:[
-                    {
-                        label:'Email',
-                        value: '',
-                        type:'email'
-                    },
-                    {
-                        label:'Password',
-                        value:'',
-                        type:'password'
-                    }
+                `,
+            components: ['custom-input'],
+            data() {
+                return {
+                    title: 'Login Form',
+                    inputs: [
+                        {
+                            label: 'Email',
+                            value: '',
+                            type: 'email'
+                        },
+                        {
+                            label: 'Password',
+                            value: '',
+                            type: 'password'
+                        }
                     ],
-                    email:'',
-                    password:'',
-                    emailLabel:'Email',
-                    passwordLabel:'Password'
+                    email: '',
+                    password: '',
+                    emailLabel: 'Email',
+                    passwordLabel: 'Password'
                 }
             },
-            methods:{
-                handleSubmit(){
+            methods: {
+                 handleSubmit() {
                     console.log(this.inputs[0].value, this.inputs[1].value)
                 }
             }
         })
-        app.component('custom-input',{
-            template:`
-            <label>
-            {{label}}
-            <input :type="type" v-model="inputValue">
-            </label>
-            `,  
-            props:['label','type',modelValue'],
-            computed:{
+        app.component('custom-input', {
+            template: `
+                <label>
+                {{label}}
+                <input :type="type" v-model="inputValue">
+                </label>
+                `,
+           props:['label','type','modelValue'],
+           computed:{
                 inputValue:{
                     get(){
                     return this.modelValue
@@ -113,14 +113,11 @@
                     }
                 }
 
-            },
-            // data(){
-            //     return{
-            //         inputValue:''
-            //     }
-            // }
+            }
         })
         app.mount('#app')
     </script>
-</body>
-</html>
+    </body>
+    
+    </html>
+    
